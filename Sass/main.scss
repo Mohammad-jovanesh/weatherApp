@@ -1,0 +1,30 @@
+@import "./base.scss";
+@import "./layout.scss";
+@import "./Component/search.scss";
+@import "./Component/today.scss";
+@import "./Component/todayForcast.scss";
+@import "./Component/airCondition.scss";
+@import "./Component/sevenfoceCast.scss";
+@import "./Component/dropDown.scss";
+
+.weather_Cart{
+        width: 80%;
+        height: 100vh;
+        margin: auto;
+        border-radius: 2rem;
+        padding: 1rem 0rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: 1fr 2.5fr 2fr 3fr;
+        @include ResponsiveMedia(lg){
+            grid-template-columns: repeat(1, minmax(200px, 1fr));
+            grid-template-rows: repeat(5, minmax(auto, 1fr));
+        }
+        grid-gap: 1rem;
+      
+     }
+.header_section {
+    text-transform: capitalize;
+    font-size: 1.2rem
+}
+

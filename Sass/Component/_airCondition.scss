@@ -1,0 +1,47 @@
+ .air_conditions {
+     grid-column: 1 / 4;
+     grid-row: 4 / 5;
+    @include ResponsiveMedia(xl) {
+            grid-column: 1 / 3;
+    
+        }
+     padding: 1rem 1.5rem;
+     height: 100%;
+     background-color: #202B3C;
+     border-radius: 1rem;
+     &_conatainer {
+        
+         width: 100%;
+         height: 100%;
+         
+         
+         .air_condition_grid {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             grid-template-rows: repeat(2, 1fr);
+             grid-gap: 1rem;
+             margin-top: 1rem;
+             .air_condition_card {
+                 width: 100%;
+                 height: 7rem;
+                 display: flex;
+                 padding: 1rem 2rem;
+
+                 &_text {
+                     font-size: 1.3rem;
+                 }
+
+                 &_value {
+                     font-size: 2rem;
+                     margin-top: 1rem;
+                 }
+
+                 i {
+                     font-size: 2rem;
+                     margin-right: 2rem;
+                 }
+             }
+         }
+     }
+
+ }

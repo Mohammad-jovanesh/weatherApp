@@ -1,0 +1,34 @@
+.today_forcast {
+
+    padding: 1rem 2rem;
+    grid-column: 1/ 4;
+    grid-row: 3 / 4;
+    background-color: $bg_Component;
+    border-radius: 1rem;
+    @include ResponsiveMedia(xl) {
+            grid-column: 1 / 3;
+    
+        }
+    // .header_section {
+    //     text-transform: capitalize;
+    //     font-size: 1.2rem
+    // }
+
+    .today_forcast_conatiner {
+        width: 100%;
+        min-height: 10rem;
+        margin-top: 2rem;
+        @include MakeFlex(center, space-between);
+
+        .today_forcast_cart {
+            width: 10rem;
+            height: 10rem;
+            @include MakeFlex(center, center, column);
+
+            .today_forcast_icon {
+                width: 4rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+}

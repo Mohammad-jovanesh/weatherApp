@@ -1,0 +1,37 @@
+.input_section {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    @include ResponsiveMedia(xl) {
+        grid-column: 1 / 3;
+    
+        }
+    @include MakeFlex();
+    position: relative;
+    form {
+        width: 100%;
+        height: 4rem;
+        position: relative;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        padding: 0 2rem;
+        color: #fff;
+        font-size: 1.3rem;
+        @include MakeinitElm($bg_Component);
+        transition: all .5s ease .5s;
+    }
+
+    button[type="submit"] {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4%;
+        cursor: pointer;
+        color: #fff;
+        @include MakeinitElm();
+        font-size: 1.5rem
+    }
+}

@@ -1,0 +1,50 @@
+ .today_section {
+     padding: 1rem 2rem;
+     grid-column: 1 / 4;
+    @include ResponsiveMedia(xl) {
+            grid-column: 1 / 3;
+            padding: 0 !important;
+    
+        }
+     grid-row: 2 / 3;
+    
+     .today_section_flex {
+         @include MakeFlex(flex-start, space-between);
+         padding: .5rem 6rem .5rem 1rem;
+         width: 100%;
+         height: 100%;
+     }
+
+     &_left {
+        @include MakeFlex(flex-start,space-evenly,column);
+        height: 100%;
+         .city_name {
+             font-size: 2.5rem;
+             margin-bottom: .5rem;
+             letter-spacing: 4px;
+             
+         }
+
+         .country_name {
+             font-size: 1.4rem;
+             color: $UnActive_text_color;
+         }
+         .today_Date{
+            justify-self: flex-end;
+            font-size: 1.4rem;
+            text-transform: capitalize;
+         }
+     }
+
+     &_right {
+         margin-left: 20rem;
+         img {
+             width: 8rem
+         }
+
+         .Temp_c {
+             margin-top: 2rem;
+             font-size: 3rem;
+         }
+     }
+ }

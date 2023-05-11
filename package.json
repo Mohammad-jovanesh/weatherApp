@@ -1,0 +1,12 @@
+{
+  "name": "WeatherApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch Sass:Css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
