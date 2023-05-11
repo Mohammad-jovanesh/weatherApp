@@ -6,8 +6,10 @@ export default async function FetchApi(typeApi, city, aqi, days = 1) {
     URL = `${URL}&q=${city}&aqi=${aqi}`;
   } else if (typeApi == "forecast") {
     URL = `${URL}&q=${city}&days=${days}&aqi=${aqi}`;
+  } else if (typeApi == "search") {
+    URL = `${URL}&q=${city}`;
   }
   let resposne = await fetch(URL);
   let data = await resposne.json();
-  console.log(data);
+  return data;
 }
