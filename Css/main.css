@@ -268,8 +268,9 @@ body {
   max-height: 20rem;
   transition: all 0.5s ease;
 }
-.Active_Form .dorpDown p {
+.Active_Form .dorpDown .drop_city {
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .weather_Cart {
