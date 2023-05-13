@@ -6,31 +6,43 @@ import FetchApi from "./JS/_getFetch.js";
 import getElement from "./JS/_getElement.js";
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++>
+const Form = getElement(".Form_input");
 const inputName = getElement(".input_name");
 const SearchSection = getElement(".input_section");
 const dropDown = getElement(".dorpDown");
-let CiteNames = [];
+let CityNames = [];
 var City = "Gorgan";
 // =====================================================>
+Form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 // Search and AutoComplet Api
 inputName.addEventListener("input", async (e) => {
   SearchSection.classList.add("Active_Form");
   if (e.target.value == "") {
     SearchSection.classList.remove("Active_Form");
-  }
-  let data = await FetchApi("search", e.target.value, "no");
-  CiteNames = [];
-  data.forEach((city) => {
-    CiteNames = [
-      ...CiteNames,
-      { name: city.name, region: city.region, country: city.country },
-    ];
     dropDown.innerHTML = "";
-    CiteNames.forEach((city) => {
-      dropDown.innerHTML += `<p class="drop_city">${city.name},${city.region},${city.country}</p>`;
-    });
-  });
+  } else {
+    let data = await FetchApi("search", e.target.value, "no");
+    CityNames = [];
+    console.log("data", data);
+    if (data == []) {
+      dropDown.innerHTML = "not founded";
+    } else {
+      data.forEach((city) => {
+        CityNames = [
+          ...CityNames,
+          { name: city.name, region: city.region, country: city.country },
+        ];
+        console.log(CityNames);
+        dropDown.innerHTML = "";
+        CityNames.forEach((city) => {
+          dropDown.innerHTML += `<p class="drop_city">${city.name},${city.region},${city.country}</p>`;
+        });
+      });
+    }
+  }
 });
 
 // choising from list of City and then have INFO ..
